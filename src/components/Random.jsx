@@ -1,12 +1,11 @@
 import React from "react";
 import axios from "axios";
 
-
 class Random extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meals: [1,2]
+      meals: {}
     };
     
   }
@@ -21,18 +20,18 @@ class Random extends React.Component {
       .then(response => response.data)
       .then(data => {
         console.log(data)
-        // this.setState({
-        //   meals: response.data.meals
-        // });
+        this.setState({
+          meals: data.meals[0]
+        });
       });
   }
 
   render() {
     const {meals} = this.state
-    const arrayMeals = meals.map(x => <p>{x}</p>);
+    const arrayMeals = Object.values(meals).map((x) => <p>{x}</p>);
     return (
       <div className="Random">
-        <div className="">
+        <div className="">               
           <div>{arrayMeals}</div>    
           <button
             className="ButtonRecipe"
