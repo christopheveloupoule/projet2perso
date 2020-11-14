@@ -1,0 +1,15 @@
+.Random {
+  border-radius: 10px;
+  width: 40%;
+  height: 40%;
+  display: block;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.ButtonRecipe {
+  margin-top: 2em;
+}
